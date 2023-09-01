@@ -45,11 +45,41 @@ a {
 }
 
 .header-logo {
+  display: flex;
   margin: auto 0;
-  height: 100%;
   color: #000;
   font-family: 'Inika', serif;
   font-weight: 400;
+}
+
+.menu-burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 24px;
+}
+
+.menu-burger__line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #717171;
+}
+
+.menu-burger__line:first-child {
+  top: 0;
+}
+
+.menu-burger__line:nth-child(2) {
+  top: 8px;
+}
+
+.menu-burger__line:nth-child(3) {
+  top: 16px;
+}
+
+.menu-burger__line:last-child {
+  top: 24px;
 }
 
 .menu__list {
@@ -634,6 +664,10 @@ a {
     max-width: 47%;
   }
 
+  .welcome-content__title {
+    text-shadow: none;
+  }
+
   .welcome-photo {
     text-align: right;
   }
@@ -700,7 +734,7 @@ a {
 
   .footer {
     margin: 33px 0 18px;
-}
+  }
 
   .footer-inner {
     display: block;
@@ -716,5 +750,160 @@ a {
   .footer-social {
     justify-content: center;
     margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-body {
+    grid-template-columns: repeat(2, 280px);
+    gap: 34px 30px;
+}
+}
+
+@media (max-width: 630px) {
+  .menu__item+.menu__item {
+    margin-left: 25px;
+}
+
+  .welcome-content__title {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .welcome-content__text {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .welcome-content__more {
+    font-size: 10px;
+    padding: 8px 18px;
+  }
+
+  .about-text__title {
+    font-size: 25px;
+  }
+
+  .about-text__description {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .service__title {
+    font-size: 25px;
+  }
+
+  .service-filter__btn {
+    font-size: 15px;
+    width: 121px;
+    height: 35px;
+  }
+
+  .service-body {
+    grid-template-columns: repeat(1, 280px);
+}
+
+  .prices__title {
+    font-size: 25px;
+  }
+
+  .prices-accourdion__summary {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .prices-help__title {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .prices-link__contact {
+    font-size: 15px;
+    padding: 8px 22px;
+    width: 121px;
+  }
+
+  .contact__title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 630px) {
+  .prices {
+    text-align: center;
+  }
+  
+  .prices-inner {
+    display: block;
+  }
+
+  .prices-accourdion {
+    margin: 0 auto;
+    max-width: 77%;
+  }
+
+  .prices-accourdion__details {
+    display: inline;
+    width: 100%;
+  }
+
+  .prices__img {
+    display: none;
+  }
+
+  .prices-help {
+    text-align: center;
+  }
+
+  .prices-help__title {
+    text-align: center;
+  }
+
+  .prices-link__contact {
+    margin: 0 auto 38px;
+  }
+}
+
+@media (max-width: 550px) {
+  .menu__list {
+    display: none;
+  }
+
+  .menu-burger {
+    display: block;
+  }
+
+  .welcome {
+    display: block;
+  }
+
+  .welcome-content {
+    max-width: 100%;
+  }
+
+  .welcome__img {
+    display: none;
+  }
+
+  .about-text__description {
+    text-align: left;
+  }
+
+  .service-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 252px;
+  }
+  
+  .service-filter__btn+.service-filter__btn {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+}
+
+@media (max-width: 380px) {
+  .container {
+    max-width: 370px;
   }
 }
