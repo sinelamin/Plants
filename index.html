@@ -18,29 +18,36 @@
 </head>
 
 <body>
+  <div class="overlay"></div>
   <header class="header">
     <div class="container">
       <div class="header__inner">
         <a class="header-logo" href="#">
           <img class="header-logo__img" src="./assets/logo.svg" alt="plants-logo">
-          Plants
+          <p class="header-logo__text">Plants</p>
         </a>
         <nav class="menu">
+          <div class="menu-burger">
+            <span class="menu-burger__line"></span>
+            <span class="menu-burger__line"></span>
+            <span class="menu-burger__line"></span>
+            <span class="menu-burger__line"></span>
+          </div>
           <ul class="menu__list">
             <li class="menu__item menu__item_active">
               <a class="menu__link" href="#">Home</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">About us</a>
+              <a class="menu__link" href="#about">About us</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Service</a>
+              <a class="menu__link" href="#service">Service</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Price</a>
+              <a class="menu__link" href="#prices">Price</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Contacts</a>
+              <a class="menu__link" href="#contact">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -59,7 +66,7 @@
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s.
           </p>
-          <a class="welcome-content__more" href="#">
+          <a class="welcome-content__more" href="#about">
             LEARN MORE
           </a>
         </div>
@@ -67,7 +74,7 @@
     </div>
   </header>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="about-inner">
         <div class="about-text">
@@ -89,7 +96,7 @@
     </div>
   </section>
 
-  <section class="service">
+  <section class="service" id="service">
     <div class="container">
       <div class="service-header">
         <h3 class="service__title">
@@ -136,7 +143,7 @@
     </div>
   </section>
 
-  <section class="prices">
+  <section class="prices" id="prices">
     <div class="container">
       <div class="prices-inner">
         <div class="prices-wrapper">
@@ -177,14 +184,14 @@
         <div class="prices-help">
           <h4 class="prices-help__title">Our best <span class="prices-help__title_color_green">gardeners</span> are
             ready to help you</h4>
-          <a class="prices-link__contact" href="#">Contact us</a>
+          <a class="prices-link__contact" href="#contact">Contact us</a>
           <img class="prices__img" src="./assets/prices-leafs.png" alt="leafs">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="container">
       <h3 class="contact__title">Contact us</h3>
       <div class="contact-adress adress">
