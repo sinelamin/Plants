@@ -262,6 +262,12 @@ a {
   cursor: pointer;
 }
 
+.active-btn {
+  color: #FFF;
+  background-color: #E06733;
+  transition: all .5s;
+}
+
 .service-filter__btn:hover {
   color: #FFF;
   background-color: #E06733;
