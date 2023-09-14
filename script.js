@@ -51,55 +51,68 @@ function hideBurger() {
 //Service filter
 //--------------------------------------------------------------------------------------
 
-const servicesBtn = document.querySelectorAll('.service-filter__btn');
+const servicesBtns = document.querySelectorAll('.service-filter__btn');
+const servicesCrads = document.querySelectorAll('.service-card');
 
-let statusServiceBtn = [false, false, false];
-let counter = 0;
+let statusServiceBtns = [false, false, false];
+let statusServiceCards = [false, false, false, false, false, false];
 
-servicesBtn.forEach((item, index) => {
+servicesBtns.forEach((item, index) => {
   item.addEventListener('click', e => {
-    changeStatusBtn(e, item, index);
-    resetStatusBtn(item, index);
+    changeStatusBtns(e, item, index);
+    resetStatusBtns(item, index);
+    checkServiceBtns();
+    changeServiceCards();
   });
 });
 
-function checkServiceBtn(e, index) {
-  // if (e.target.classList.contains('active-btn')) {
-  //   statusServiceBtn[index] = true;
-  //   console.log(statusServiceBtn);
-  // } else {
-  //   statusServiceBtn[index] = false;
-  //   console.log(statusServiceBtn);
-  // }
+function checkServiceBtns() {
+  statusServiceCards[0] = statusServiceCards[4] = statusServiceBtns[0];
+  statusServiceCards[2] = statusServiceBtns[1];
+  statusServiceCards[1] = statusServiceCards[3] = statusServiceCards[5] = statusServiceBtns[2];
 }
 
-function resetStatusBtn(item, index) {
+function changeServiceCards() {
+  statusServiceCards.forEach((item, index) => {
+    if (item) {
+      servicesCrads[index].classList.remove('card__out-focus');
+    } else {
+      servicesCrads[index].classList.add('card__out-focus');
+    }
+  });
 
-  let value = statusServiceBtn.filter(elem => elem);
+  let counter = statusServiceCards.filter(item => item).length;
+  if (counter == 0) {
+    servicesCrads.forEach(item => {
+      item.classList.remove('card__out-focus');
+    });
+  }
+}
+
+function resetStatusBtns(item, index) {
+  let value = statusServiceBtns.filter(elem => elem);
 
   if (value.length > 2) {
-    servicesBtn.forEach((btn, i) => {
+    servicesBtns.forEach((btn, i) => {
       btn.classList.remove('active-btn');
 
       if (i !== index) {
-        statusServiceBtn[i] = false;
+        statusServiceBtns[i] = false;
       }
-      console.log(statusServiceBtn);
     });
 
     item.classList.add('active-btn');
   }
 }
 
-function changeStatusBtn(e, item, index) {
-
+function changeStatusBtns(e, item, index) {
   if (e.target.classList.contains('active-btn')) {
     item.classList.remove('active-btn');
-    statusServiceBtn[index] = false;
-    console.log(statusServiceBtn);
+    statusServiceBtns[index] = false;
   } else {
     item.classList.add('active-btn');
-    statusServiceBtn[index] = true;
-    console.log(statusServiceBtn);
+    statusServiceBtns[index] = true;
   }
 }
+
+//--------------------------------------------------------------------------------------

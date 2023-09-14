@@ -291,6 +291,10 @@ a {
   text-align: center;
 }
 
+.card__out-focus {
+  filter: blur(2px);
+}
+
 .service-card__img {
   margin-bottom: 10px;
   border-radius: 20px 20px 0 0;
@@ -508,10 +512,11 @@ a {
 }
 
 .adress-inner__list {
-  display: none;
+  /* display: none; */
   margin: 0;
   padding: 27px 35px;
   background-color: #DCE9D9;
+  /* transition: all .2s; */
 }
 
 .adress-inner__item {
