@@ -457,6 +457,8 @@ a {
 }
 
 .contact {
+  position: relative;
+  height: 550px;
   background-color: #EDF2EC;
 }
 
@@ -480,13 +482,18 @@ a {
 }
 
 .adress {
+  position: relative;
+  /* z-index: 5; */
   margin-left: 63%;
   max-width: 450px;
 }
 
 .adress-inner {
+  position: absolute;
+  z-index: 5;
+  /* margin-bottom: 47px; */
   border: 1px solid #D6E7D2;
-  max-width: 450px;
+  width: 100%;
 }
 
 .adress-inner__title {
@@ -511,12 +518,22 @@ a {
   transition: all .5s;
 }
 
+.adress-title__active {
+  box-shadow: none;
+  background-color: #C1E698;
+  transition: all .0s;
+  background-image: url(../assets/adress-accordion_btn_close.svg);
+}
+
 .adress-inner__list {
-  /* display: none; */
+  display: none;
   margin: 0;
   padding: 27px 35px;
   background-color: #DCE9D9;
-  /* transition: all .2s; */
+}
+
+.adress-list__active {
+  display: block;
 }
 
 .adress-inner__item {
@@ -542,28 +559,38 @@ a {
 
 .adress-card {
   display: none;
+  width: 100%;
+  position: relative;
+  top: 105px;
+  z-index: 3;
   border: 1px solid #000;
   border-radius: 20px;
+  background-color: #EDF2EC;
+}
+
+.adress-card__active {
+  display: block;
 }
 
 .adress-card__list {
   margin-top: 0;
-  margin-bottom: 24px;
-  padding: 17px 35px 0;
+  margin-bottom: 19px;
+  padding: 7% 0 0 8%;
 }
 
 .adress-card__item {
-  height: 35px;
+  /* height: 35px; */
+  margin-bottom: 16px;
   align-items: center;
   color: #000;
   font-size: 16px;
   font-weight: 400;
-  line-height: 40px;
+  /* line-height: 40px; */
   letter-spacing: 0.8px;
 }
 
 .adress-card__title {
-  width: 130px;
+  width: 40%;
 }
 
 .adress-card__value {
@@ -583,10 +610,23 @@ a {
   font-weight: 700;
   border: 1px solid #E06733;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.adress-card__btn:hover {
+  color: #FFF;
+  background-color: #E06733;
+  transition: all .5s;
 }
 
 .contact__img {
-  vertical-align: bottom;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.img__hide {
+  display: none;
 }
 
 .footer {
@@ -778,9 +818,13 @@ a {
     max-width: 75%;
   }
 
+  .contact {
+    height: 739px;
+  }
+
   .contact__title {
     padding-top: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 66px;
   }
 
   .contact-adress {
@@ -789,9 +833,10 @@ a {
   }
 
   .contact__img {
-    display: block;
+    /* display: block; */
     width: 28%;
-    margin: 0 auto;
+    left: 38%;
+    /* margin: 0 auto; */
   }
 
   .footer {
@@ -883,6 +928,10 @@ a {
     font-size: 15px;
     padding: 8px 22px;
     width: 121px;
+  }
+
+  .contact {
+    height: 680px;
   }
 
   .contact__title {
@@ -1028,6 +1077,10 @@ a {
     margin-left: 0;
     margin-bottom: 10px;
   }
+
+  .contact {
+    height: 650px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1041,5 +1094,22 @@ a {
 
   .prices-accourdion__summary {
     min-width: 90px;
+  }
+
+  .contact {
+    height: 445px;
+  }
+
+  .contact__title {
+    padding-top: 25px;
+    margin-bottom: 80px;
+  }
+
+  .adress-card {
+    top: 90px
+  }
+
+  .contact__img {
+    width: 28%;
   }
 }
