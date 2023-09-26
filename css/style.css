@@ -31,7 +31,7 @@ a {
 .overlay {
   display: none;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
@@ -63,10 +63,16 @@ a {
   font-weight: 400;
 }
 
+.header-logo--active {
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
 .menu-burger {
   display: none;
   position: relative;
-  z-index: 5;
+  z-index: 9;
   width: 40px;
   height: 24px;
 }
@@ -116,12 +122,17 @@ a {
 
 .menu__item:hover {
   color: #E06733;
-  transition: all .5s;
+  transition: color  .5s;
 }
 
 .menu__link {
   display: block;
   width: 100%;
+}
+
+.menu__item:active {
+  transform: scale(1.2);
+  transition: all .2s;
 }
 
 .welcome {
@@ -172,12 +183,6 @@ a {
   line-height: 20px;
   background-color: transparent;
   text-transform: uppercase;
-}
-
-.welcome-content__more:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
 }
 
 .about {
@@ -262,13 +267,7 @@ a {
   cursor: pointer;
 }
 
-.active-btn {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
-.service-filter__btn:hover {
+.service-filter__btn--active {
   color: #FFF;
   background-color: #E06733;
   transition: all .5s;
@@ -291,7 +290,7 @@ a {
   text-align: center;
 }
 
-.card__out-focus {
+.card__out--focus {
   filter: blur(2px);
 }
 
@@ -450,12 +449,6 @@ a {
   border: 1px solid #E06733;
 }
 
-.prices-link__contact:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
 .contact {
   position: relative;
   height: 550px;
@@ -490,7 +483,7 @@ a {
 
 .adress-inner {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   /* margin-bottom: 47px; */
   border: 1px solid #D6E7D2;
   width: 100%;
@@ -518,7 +511,7 @@ a {
   transition: all .5s;
 }
 
-.adress-title__active {
+.adress-inner__title--active {
   box-shadow: none;
   background-color: #C1E698;
   transition: all .0s;
@@ -532,7 +525,7 @@ a {
   background-color: #DCE9D9;
 }
 
-.adress-list__active {
+.adress-inner__list--active {
   display: block;
 }
 
@@ -562,13 +555,13 @@ a {
   width: 100%;
   position: relative;
   top: 105px;
-  z-index: 3;
+  z-index: 1;
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #EDF2EC;
 }
 
-.adress-card__active {
+.adress-card--active {
   display: block;
 }
 
@@ -613,19 +606,13 @@ a {
   cursor: pointer;
 }
 
-.adress-card__btn:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
 .contact__img {
   position: absolute;
   bottom: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
-.img__hide {
+.contact__img--hide {
   display: none;
 }
 
@@ -658,6 +645,30 @@ a {
 
 .footer-social__item+.footer-social__item {
   margin-left: 20px;
+}
+
+.welcome-content__more:hover,
+.service-filter__btn:hover,
+.prices-link__contact:hover,
+.prices-accourdion__btn:hover,
+.adress-card__btn:hover {
+  color: #FFF;
+  background-color: #E06733;
+  transition: all .5s;
+}
+
+.service-filter__btn:active,
+.prices-link__contact:active,
+.prices-accourdion__btn:active,
+.adress-card__btn:active {
+  transform: scale(1.1);
+  transition: all .2s;
+}
+
+.welcome-content__more:active {
+  color: #000;
+  border-color: #000;
+  background-color: transparent;
 }
 
 @media (max-width: 1255px) {
@@ -978,7 +989,7 @@ a {
 @media (max-width: 550px) {
   .header__inner {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     top: 0;
     left: 0;
     padding: 26px 20px;
@@ -986,11 +997,11 @@ a {
     background-color: rgba(234, 229, 229, 0.5);
   }
 
-  .overlay__active {
+  .overla--active {
     display: block;
   }
 
-  .body-menu__active {
+  .body-menu--active {
     overflow: hidden;
   }
 
@@ -1019,7 +1030,7 @@ a {
     transition: all .5s;
   }
 
-  .menu-active {
+  .menu--active {
     top: 0;
     transition: all .5s;
   }
@@ -1032,18 +1043,18 @@ a {
     text-align: center;
   }
 
-  .burger-line__active:first-child {
+  .burger-line--active:first-child {
     top: 8px;
     transform: rotate(45deg);
     transition: all .5s;
   }
 
-  .burger-line__active:nth-child(2),
-  .burger-line__active:nth-child(3) {
+  .burger-line--active:nth-child(2),
+  .burger-line--active:nth-child(3) {
     display: none;
   }
 
-  .burger-line__active:last-child {
+  .burger-line--active:last-child {
     top: 8px;
     transform: rotate(-45deg);
     transition: all .5s;

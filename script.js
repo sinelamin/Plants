@@ -9,21 +9,30 @@ const menuList = document.querySelector('.menu__list');
 const burgerLine = document.querySelectorAll('.menu-burger__line');
 const overlay = document.querySelector('.overlay');
 const menuLink = document.querySelectorAll('.menu__link');
+const logo = document.querySelector('.header-logo');
+const header = document.querySelector('.header__inner');
 
 burger.addEventListener('click', e => {
   e.preventDefault();
-  menuList.classList.toggle('menu-active');
-  body.classList.toggle('body-menu__active');
+  menuList.classList.toggle('menu--active');
+  body.classList.toggle('body-menu--active');
   overlay.style.height = document.documentElement.scrollHeight + 'px';
-  overlay.classList.toggle('overlay__active');
+  overlay.classList.toggle('overla--active');
+  logo.classList.toggle('header-logo--active');
   burgerLine.forEach(item => {
-    item.classList.toggle('burger-line__active');
+    item.classList.toggle('burger-line--active');
   });
 });
 
 overlay.addEventListener('click', e => {
   if (e.target.classList.contains('overlay')) {
     e.preventDefault();
+    hideBurger();
+  }
+});
+
+header.addEventListener('click', e => {
+  if (e.target === header && menuList.classList.contains('menu--active')) {
     hideBurger();
   }
 });
@@ -35,11 +44,12 @@ menuLink.forEach(item => {
 });
 
 function hideBurger() {
-  menuList.classList.remove('menu-active');
-  body.classList.remove('body-menu__active');
-  overlay.classList.remove('overlay__active');
+  menuList.classList.remove('menu--active');
+  body.classList.remove('body-menu--active');
+  overlay.classList.toggle('overla--active');
+  logo.classList.toggle('header-logo--active');
   burgerLine.forEach(item => {
-    item.classList.remove('burger-line__active');
+    item.classList.remove('burger-line--active');
   });
 }
 
@@ -75,16 +85,16 @@ function checkServiceBtns() {
 function changeServiceCards() {
   statusServiceCards.forEach((item, index) => {
     if (item) {
-      servicesCrads[index].classList.remove('card__out-focus');
+      servicesCrads[index].classList.remove('card__out--focus');
     } else {
-      servicesCrads[index].classList.add('card__out-focus');
+      servicesCrads[index].classList.add('card__out--focus');
     }
   });
 
   let counter = statusServiceCards.filter(item => item).length;
   if (counter == 0) {
     servicesCrads.forEach(item => {
-      item.classList.remove('card__out-focus');
+      item.classList.remove('card__out--focus');
     });
   }
 }
@@ -94,23 +104,23 @@ function resetStatusBtns(item, index) {
 
   if (value.length > 2) {
     servicesBtns.forEach((btn, i) => {
-      btn.classList.remove('active-btn');
+      btn.classList.remove('service-filter__btn--active');
 
       if (i !== index) {
         statusServiceBtns[i] = false;
       }
     });
 
-    item.classList.add('active-btn');
+    item.classList.add('service-filter__btn--active');
   }
 }
 
 function changeStatusBtns(e, item, index) {
-  if (e.target.classList.contains('active-btn')) {
-    item.classList.remove('active-btn');
+  if (e.target.classList.contains('service-filter__btn--active')) {
+    item.classList.remove('service-filter__btn--active');
     statusServiceBtns[index] = false;
   } else {
-    item.classList.add('active-btn');
+    item.classList.add('service-filter__btn--active');
     statusServiceBtns[index] = true;
   }
 }
@@ -185,27 +195,27 @@ callBtn.addEventListener('click', e => {
 });
 
 function adressListActive() {
-  if (adressHeader.classList.contains('adress-title__active')) {
-    adressHeader.classList.remove('adress-title__active');
-    adressList.classList.remove('adress-list__active');
+  if (adressHeader.classList.contains('adress-inner__title--active')) {
+    adressHeader.classList.remove('adress-inner__title--active');
+    adressList.classList.remove('adress-inner__list--active');
   } else {
-    adressHeader.classList.add('adress-title__active');
-    adressList.classList.add('adress-list__active');
+    adressHeader.classList.add('adress-inner__title--active');
+    adressList.classList.add('adress-inner__list--active');
   }
 }
 
 function adressCardActive() {
-  if (adressList.classList.contains('adress-list__active')) {
-    adressCard.classList.remove('adress-card__active');
+  if (adressList.classList.contains('adress-inner__list--active')) {
+    adressCard.classList.remove('adress-card--active');
   } else {
-    adressCard.classList.add('adress-card__active');
+    adressCard.classList.add('adress-card--active');
     contactImgHide();
   }
 }
 
 function contactImgHide() {
   if (document.documentElement.scrollWidth < 381) {
-    contactImg.classList.add('img__hide');
+    contactImg.classList.add('contact__img--hide');
   }
 }
 
