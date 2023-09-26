@@ -31,7 +31,7 @@ a {
 .overlay {
   display: none;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
@@ -63,10 +63,16 @@ a {
   font-weight: 400;
 }
 
+.header-logo--active {
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
 .menu-burger {
   display: none;
   position: relative;
-  z-index: 5;
+  z-index: 9;
   width: 40px;
   height: 24px;
 }
@@ -477,7 +483,7 @@ a {
 
 .adress-inner {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   /* margin-bottom: 47px; */
   border: 1px solid #D6E7D2;
   width: 100%;
@@ -549,7 +555,7 @@ a {
   width: 100%;
   position: relative;
   top: 105px;
-  z-index: 3;
+  z-index: 1;
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #EDF2EC;
@@ -603,7 +609,7 @@ a {
 .contact__img {
   position: absolute;
   bottom: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .img__hide {
@@ -983,7 +989,7 @@ a {
 @media (max-width: 550px) {
   .header__inner {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     top: 0;
     left: 0;
     padding: 26px 20px;

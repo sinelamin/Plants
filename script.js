@@ -9,6 +9,8 @@ const menuList = document.querySelector('.menu__list');
 const burgerLine = document.querySelectorAll('.menu-burger__line');
 const overlay = document.querySelector('.overlay');
 const menuLink = document.querySelectorAll('.menu__link');
+const logo = document.querySelector('.header-logo');
+const header = document.querySelector('.header__inner');
 
 burger.addEventListener('click', e => {
   e.preventDefault();
@@ -16,6 +18,7 @@ burger.addEventListener('click', e => {
   body.classList.toggle('body-menu__active');
   overlay.style.height = document.documentElement.scrollHeight + 'px';
   overlay.classList.toggle('overlay__active');
+  logo.classList.toggle('header-logo--active');
   burgerLine.forEach(item => {
     item.classList.toggle('burger-line__active');
   });
@@ -24,6 +27,12 @@ burger.addEventListener('click', e => {
 overlay.addEventListener('click', e => {
   if (e.target.classList.contains('overlay')) {
     e.preventDefault();
+    hideBurger();
+  }
+});
+
+header.addEventListener('click', e => {
+  if (e.target === header && menuList.classList.contains('menu-active')) {
     hideBurger();
   }
 });
@@ -37,7 +46,8 @@ menuLink.forEach(item => {
 function hideBurger() {
   menuList.classList.remove('menu-active');
   body.classList.remove('body-menu__active');
-  overlay.classList.remove('overlay__active');
+  overlay.classList.toggle('overlay__active');
+  logo.classList.toggle('header-logo--active');
   burgerLine.forEach(item => {
     item.classList.remove('burger-line__active');
   });
