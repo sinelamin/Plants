@@ -116,12 +116,17 @@ a {
 
 .menu__item:hover {
   color: #E06733;
-  transition: all .5s;
+  transition: color  .5s;
 }
 
 .menu__link {
   display: block;
   width: 100%;
+}
+
+.menu__item:active {
+  transform: scale(1.2);
+  transition: all .2s;
 }
 
 .welcome {
@@ -639,10 +644,25 @@ a {
 .welcome-content__more:hover,
 .service-filter__btn:hover,
 .prices-link__contact:hover,
+.prices-accourdion__btn:hover,
 .adress-card__btn:hover {
   color: #FFF;
   background-color: #E06733;
   transition: all .5s;
+}
+
+.service-filter__btn:active,
+.prices-link__contact:active,
+.prices-accourdion__btn:active,
+.adress-card__btn:active {
+  transform: scale(1.1);
+  transition: all .2s;
+}
+
+.welcome-content__more:active {
+  color: #000;
+  border-color: #000;
+  background-color: transparent;
 }
 
 @media (max-width: 1255px) {
