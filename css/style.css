@@ -174,12 +174,6 @@ a {
   text-transform: uppercase;
 }
 
-.welcome-content__more:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
 .about {
   margin-bottom: 94px;
 }
@@ -263,12 +257,6 @@ a {
 }
 
 .active-btn {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
-.service-filter__btn:hover {
   color: #FFF;
   background-color: #E06733;
   transition: all .5s;
@@ -450,12 +438,6 @@ a {
   border: 1px solid #E06733;
 }
 
-.prices-link__contact:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
 .contact {
   position: relative;
   height: 550px;
@@ -613,12 +595,6 @@ a {
   cursor: pointer;
 }
 
-.adress-card__btn:hover {
-  color: #FFF;
-  background-color: #E06733;
-  transition: all .5s;
-}
-
 .contact__img {
   position: absolute;
   bottom: 0;
@@ -658,6 +634,15 @@ a {
 
 .footer-social__item+.footer-social__item {
   margin-left: 20px;
+}
+
+.welcome-content__more:hover,
+.service-filter__btn:hover,
+.prices-link__contact:hover,
+.adress-card__btn:hover {
+  color: #FFF;
+  background-color: #E06733;
+  transition: all .5s;
 }
 
 @media (max-width: 1255px) {
